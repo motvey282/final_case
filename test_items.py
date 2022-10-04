@@ -6,13 +6,13 @@ import time
 
 
 
-def test_items(browser):
+def test_button_should_be(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     browser.get(link)
     time.sleep(20)
     try:
         browser.find_element(By.CSS_SELECTOR, ".btn-add-to-basket")
     except (NoSuchElementException):
-        return False
-    return True
+        assert False
+    assert True
 
